@@ -931,3 +931,52 @@ class HelloWorld {
 
 </TabItem>
 </Tabs>
+
+You may want to implement your own `<MultiLanguageCode />` abstraction if you find the above approach too verbose. We might just implement one in future for convenience.
+
+If you have multiple of these multi-language code tabs, and you want to sync the selection across the tab instances, refer to the [Syncing tab choices section](#syncing-tab-choices).
+
+## Assets
+
+Sometimes you want to link to static assets directly from Markdown files, and it is convenient to co-locate the asset next to the markdown file using it.
+
+We have setup Webpack loaders to handle most common file types, so that when you import a file, you get its url, and the asset is automatically copied to the output folder.
+
+Let's imagine the following file structure:
+
+```
+# Your doc
+/website/docs/myFeature.mdx
+
+# Some assets you want to use
+/website/docs/assets/docusaurus-asset-example-banner.png
+/website/docs/assets/docusaurus-asset-example-pdf.pdf
+```
+
+### Images
+
+You can use images in Markdown, or by requiring them and using a JSX image tag:
+
+```mdx
+# My Markdown page
+
+<img src={require('./assets/docusaurus-asset-example-banner.png').default} />
+
+or
+
+![](./assets/docusaurus-asset-example-banner.png)
+```
+
+The ES imports syntax also works:
+
+```mdx
+# My Markdown page
+
+import myImageUrl from './assets/docusaurus-asset-example-banner.png';
+
+<img src={myImageUrl)}/>
+```
+
+This results in displaying the image:
+
+![](./assets/docusaurus-asset-example-banner.png)
