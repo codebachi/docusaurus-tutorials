@@ -7,6 +7,7 @@ module.exports = {
       'docshow/markdown-features',
       'docshow/taps',
       'docshow/callouts',
+      'docshow/codeblocks',
       'docshow/foundation'
     ],
     Features: ['mdx'],
