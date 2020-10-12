@@ -17,6 +17,9 @@ module.exports = {
   },
   //clientModules: [require.resolve('./dogfooding/clientModuleExample.ts')],
   themes: ['@docusaurus/theme-live-codeblock'],
+  plugins: [
+    
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
