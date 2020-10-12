@@ -1,0 +1,101 @@
+---
+id: callouts
+title: Callouts
+description: Show callouts content within Markdown files.
+---
+
+## Callouts/admonitions
+
+In addition to the basic Markdown syntax, we use [remark-admonitions](https://github.com/elviswolcott/remark-admonitions) alongside MDX to add support for admonitions. Admonitions are wrapped by a set of 3 colons.
+
+Example:
+
+    :::note
+    The content and title *can* include markdown.
+    :::
+
+    :::tip You can specify an optional title
+    Heads up! Here's a pro-tip.
+    :::
+
+    :::info
+    Useful information.
+    :::
+
+    :::caution
+    Warning! You better pay attention!
+    :::
+
+    :::danger
+    Danger danger, mayday!
+    :::
+
+:::note
+
+The content and title _can_ include markdown.
+
+:::
+
+:::tip You can specify an optional title
+
+Heads up! Here's a pro-tip.
+
+:::
+
+:::info
+
+Useful information.
+
+:::
+
+:::caution
+
+Warning! You better pay attention!
+
+:::
+
+:::danger
+
+Danger danger, mayday!
+
+:::
+
+### 타이틀 지정
+
+You may also specify an optional title
+
+    :::note Your Title
+    The content and title *can* include markdown.
+    :::
+
+
+
+:::note 밑줄 쫙!
+
+The content and title _can_ include Markdown.
+
+:::
+
+:::tip 팁중의 팁!
+
+Heads up! Here's a pro-tip.
+
+:::
+
+:::info 알짜 정보
+
+The content and title _can_ include Markdown.
+
+:::
+
+:::caution 주의하세요!
+
+The content and title _can_ include Markdown.
+
+:::
+
+:::danger 위험해요!
+
+The content and title _can_ include Markdown.
+
+:::

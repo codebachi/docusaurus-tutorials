@@ -5,6 +5,8 @@ module.exports = {
       'docshow/introduction',
       'docshow/configuring-plugins',
       'docshow/markdown-features',
+      'docshow/taps',
+      'docshow/callouts',
       'docshow/foundation'
     ],
     Features: ['mdx'],
