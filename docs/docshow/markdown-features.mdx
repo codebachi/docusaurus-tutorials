@@ -980,3 +980,48 @@ import myImageUrl from './assets/docusaurus-asset-example-banner.png';
 This results in displaying the image:
 
 ![](./assets/docusaurus-asset-example-banner.png)
+
+:::note
+
+플러그인 사용 문서 링크
+:::
+
+### Files
+
+In the same way, you can link to existing assets by requiring them and using the returned url in videos, links etc.
+
+```mdx
+# My Markdown page
+
+<a
+  target="_blank"
+  href={require('./assets/docusaurus-asset-example-pdf.pdf').default}>
+  Download this PDF
+</a>
+
+or
+
+[Download this PDF using Markdown](./assets/docusaurus-asset-example-pdf.pdf)
+```
+
+<a
+  target="_blank"
+  href={require('./assets/docusaurus-asset-example-pdf.pdf').default}>
+  Download this PDF
+</a>
+
+[Download this PDF using Markdown](./assets/docusaurus-asset-example-pdf.pdf)
+
+### Inline SVGs
+
+Docusaurus supports inlining SVGs out of the box.
+
+```js
+import DocusaurusSvg from './docusaurus.svg';
+
+<DocusaurusSvg />;
+```
+
+import DocusaurusSvg from '@site/static/img/docusaurus.svg';
+
+<DocusaurusSvg />
