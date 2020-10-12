@@ -718,3 +718,75 @@ Supported commenting syntax:
 | HTML       | `<!-- ... -->`           |
 
 If there's a syntax that is not currently supported, we are open to adding them! Pull requests welcome.
+
+### Interactive code editor
+
+(Powered by [React Live](https://github.com/FormidableLabs/react-live))
+
+You can create an interactive coding editor with the `@docusaurus/theme-live-codeblock` plugin.
+
+First, add the plugin to your package.
+
+```bash npm2yarn
+npm install --save @docusaurus/theme-live-codeblock
+```
+
+You will also need to add the plugin to your `docusaurus.config.js`.
+
+```js {3}
+module.exports = {
+  // ...
+  themes: ['@docusaurus/theme-live-codeblock'],
+  // ...
+};
+```
+
+To use the plugin, create a code block with `live` attached to the language meta string.
+
+    ```jsx live
+    function Clock(props) {
+      const [date, setDate] = useState(new Date());
+      useEffect(() => {
+        var timerID = setInterval(() => tick(), 1000);
+
+        return function cleanup() {
+          clearInterval(timerID);
+        };
+      });
+
+      function tick() {
+        setDate(new Date());
+      }
+
+      return (
+        <div>
+          <h2>It is {date.toLocaleTimeString()}.</h2>
+        </div>
+      );
+    }
+    ```
+
+The code block will be rendered as an interactive editor. Changes to the code will reflect on the result panel live.
+
+```jsx live
+function Clock(props) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    var timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  return (
+    <div>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+```
