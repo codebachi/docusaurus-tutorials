@@ -4,8 +4,8 @@ const path = require('path')
 const math = require('remark-math')
 const katex = require('rehype-katex')
 const npm2yarn = require('./src/plugins/remark-npm2yarn')
-const prismThemeNormal = require('prism-react-renderer/themes/shadesOfPurple')
-const prismThemeDark = require('prism-react-renderer/themes/dracula')
+const prismTheme = require('prism-react-renderer/themes/shadesOfPurple')
+const prismDarkTheme = require('prism-react-renderer/themes/shadesOfPurple')
 // dracula, duotoneDark, duotoneLight, github, nightOwl
 // nightOwlLight, oceanicNext, palenight, shadesOfPurple, synthwave84, ultramin, vsDark
 
@@ -72,8 +72,8 @@ module.exports = {
         '⭐️ If you like Docusaurus, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/docusaurus">GitHub</a>! ⭐️',
     },
     prism: {
-      theme: prismThemeNormal,
-      darkTheme: prismThemeDark,
+      theme: prismTheme,
+      darkTheme: prismDarkTheme,
     },
     image: 'img/docusaurus-soc.png',
     // metadatas: [{name: 'twitter:card', content: 'summary'}],
