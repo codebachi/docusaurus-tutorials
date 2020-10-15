@@ -34,5 +34,11 @@ module.exports = {
       collapsed: false,
       items: ['git/git-branching', 'git/git-branching-merging', 'git/git-merge'],
     },
+    {
+      type: 'category',
+      label: 'Math',
+      collapsed: false,
+      items: ['math/math'],
+    },
   ]  
 };
