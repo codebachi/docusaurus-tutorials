@@ -4,13 +4,21 @@ module.exports = {
       type: 'category',
       label: 'Docusaurus',
       collapsed: false,
-      items: ['introduction', 'design-principles', 'contributing'],
+      items: [
+        'introduction', 
+        'design-principles', 
+        'contributing'
+      ],
     },
     {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['installation', 'configuration', 'typescript-support'],
+      items: [
+        'installation', 
+        'configuration', 
+        'typescript-support'
+      ],
     },
     {
       type: 'category',
@@ -31,14 +39,20 @@ module.exports = {
     {
       type: 'category',
       label: 'Git',
-      collapsed: false,
-      items: ['git/git-branching', 'git/git-branching-merging', 'git/git-merge'],
+      collapsed: true,
+      items: [
+        'git/git-branching', 
+        'git/git-branching-merging', 
+        'git/git-merge'
+      ],
     },
     {
       type: 'category',
       label: 'Math',
-      collapsed: false,
-      items: ['math/math'],
+      collapsed: true,
+      items: [
+        'math/math'
+      ],
     },
   ]  
 };
