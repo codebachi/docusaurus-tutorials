@@ -1,8 +1,13 @@
 
-const path = require('path');
+const path = require('path')
 //const versions = require('./versions.json'); // 추후지원
-const math = require('remark-math');
-const katex = require('rehype-katex');
+const math = require('remark-math')
+const katex = require('rehype-katex')
+const npm2yarn = require('./src/plugins/remark-npm2yarn')
+const prismThemeNormal = require('prism-react-renderer/themes/shadesOfPurple')
+const prismThemeDark = require('prism-react-renderer/themes/dracula')
+// dracula, duotoneDark, duotoneLight, github, nightOwl
+// nightOwlLight, oceanicNext, palenight, shadesOfPurple, synthwave84, ultramin, vsDark
 
 module.exports = {
   title: 'Docusaurus KR',
@@ -38,13 +43,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
-          remarkPlugins: [math, require('./src/plugins/remark-npm2yarn')],
+          remarkPlugins: [math, npm2yarn],
           rehypePlugins: [katex],
           showLastUpdateTime: false,
         },
         blog: {
           showReadingTime: true,
-          remarkPlugins: [math, require('./src/plugins/remark-npm2yarn')],
+          remarkPlugins: [math, npm2yarn],
           rehypePlugins: [katex],
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/blog/',
@@ -67,8 +72,8 @@ module.exports = {
         '⭐️ If you like Docusaurus, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/docusaurus">GitHub</a>! ⭐️',
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/dracula'),
+      theme: prismThemeNormal,
+      darkTheme: prismThemeDark,
     },
     image: 'img/docusaurus-soc.png',
     // metadatas: [{name: 'twitter:card', content: 'summary'}],
