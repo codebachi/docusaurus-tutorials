@@ -38,13 +38,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
-          remarkPlugins: [math],
+          remarkPlugins: [math, require('./src/plugins/remark-npm2yarn')],
           rehypePlugins: [katex],
           showLastUpdateTime: false,
         },
         blog: {
           showReadingTime: true,
-          remarkPlugins: [math],
+          remarkPlugins: [math, require('./src/plugins/remark-npm2yarn')],
           rehypePlugins: [katex],
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/blog/',
