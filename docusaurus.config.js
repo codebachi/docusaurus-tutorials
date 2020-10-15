@@ -40,7 +40,7 @@ module.exports = {
           editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
         },
         blog: {
           showReadingTime: true,
