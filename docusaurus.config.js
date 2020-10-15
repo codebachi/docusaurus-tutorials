@@ -1,8 +1,8 @@
 
 const path = require('path');
 //const versions = require('./versions.json'); // 추후지원
-const math = require('remark-math')
-const katex = require('rehype-katex')
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 module.exports = {
   title: 'Docusaurus KR',
