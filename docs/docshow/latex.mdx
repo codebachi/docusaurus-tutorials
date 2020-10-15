@@ -1,0 +1,128 @@
+---
+id: latex
+title: How to use LaTeX in Docusaurus with Remark Math
+description: Show latex content within Markdown files.
+---
+
+## Installation
+You can use LaTeX in Docusaurus by using [remark math](https://github.com/remarkjs/remark-math).
+
+루트 디렉토리에 터미널을 열고 패키지를 설치.
+
+```
+yarn add remark-math
+```
+ 
+```
+yarn add rehype-katex
+```
+
+This will add `remark-math` and `rehype-katex` to the package.json file.
+
+## Configuration
+At the top of your docusaurus.config.js, add
+
+```js
+const math = require('remark-math')
+const katex = require('rehype-katex')
+```
+
+Then, in docusaurus.config.js, add the following in module.exports (not under themeConfig)
+
+```js
+stylesheets: [
+    {
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css',
+        type: 'text/css',
+        integrity: 'sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq',
+        crossorigin: 'anonymous',
+    },
+  ],
+```
+Then add the following underneath your `docs` section in `presets`:
+
+```js
+remarkPlugins: [math],
+rehypePlugins: [katex],
+```
+
+The result will look something like this:
+
+```js
+const math = require('remark-math')
+const katex = require('rehype-katex')
+module.exports = {
+  title: 'Theo\'s Docs',
+  tagline: 'Read my docs',
+  url: 'https://docs.theochu.com',
+  baseUrl: '/',
+  favicon: 'img/Theodore_Chu_Laughing-Square-1000px.png',
+  organizationName: 'TheodoreChu', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq',
+      crossorigin: 'anonymous',
+    },
+  ],
+  themeConfig: {
+...
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl:
+            'https://github.com/theodorechu/docs/edit/master/',
+          routeBasePath: '',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+          showLastUpdateTime: true,
+          //showLastUpdateAuthor: true,
+        },
+```
+
+## Self-Hosting the Stylesheets
+You can also choose to self-host the stylesheets. The latest versions are available here.
+Go to static by running cd static in your root directory.
+
+Then run
+
+```
+wget https://github.com/KaTeX/KaTeX/releases/download/v0.11.1/katex.tar.gz
+```
+
+There's at least two ways to unpack the .tar.gz files:
+
+1. Run tar xvzf katex.tar.gz. You can remove the .tar.gz file with rm katex.tar.gz
+2. Run gunzip katex.tar.gz then run tar xvf katex.tar.
+
+Then, in the above configuration steps, replace href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css', with
+
+```
+href: '/katex/katex.min.css',
+```
+
+## Usage
+You can use either `$` brackets or `$$` brackets across multiple lines.
+
+For example, this
+
+```
+**Fundamental Theorem of Calculus**  
+Let $f:[a,b] \to \R$ be Riemann integrable. Let $F:[a,b]\to\R$ be $F(x)=
+\int_{a}^{x}f(t)dt$.
+Then $$F$$ is continuous, and at all $x$ such that $f$ is continuous at $x$,
+$F$ is differentiable at $x$ with $F'(x)=f(x)$.
+```
+
+will print to this:
+
+**Fundamental Theorem of Calculus**  
+Let $f:[a,b] \to \R$ be Riemann integrable. Let $F:[a,b]\to\R$ be $F(x)=
+\int_{a}^{x}f(t)dt$.
+Then $$F$$ is continuous, and at all $x$ such that $f$ is continuous at $x$,
+$F$ is differentiable at $x$ with $F'(x)=f(x)$
