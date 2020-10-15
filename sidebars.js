@@ -32,7 +32,7 @@ module.exports = {
       type: 'category',
       label: 'Git',
       collapsed: false,
-      items: ['git/git-branch', 'git/git-checkout', 'git/git-merge'],
+      items: ['git/git-branching', 'git/git-branching-merging', 'git/git-merge'],
     },
   ]  
 };
