@@ -3,7 +3,36 @@ id: cm-pointer
 title: Pointers
 ---
 
-## 1.2 The Address and Indirection Operators
+# 11 Pointers
+Pointers are one of C's most important -- and most often misunderstood  features. Because of their importance, we'll devote three chapters to pointers. In this chapter, we'll concentrate on the basics; Chapter 12 and 17 cover more  advanced uses of pointers.
+We'll start with a discussion of memory addresses and their relationship to pointer variables (Section 11.1). Section 11.2 then introduces the address and indirection operators. Section 11.3 covers pointer assignment. Section 11.4 explains how to pass pointers to functions, while Section 11.5 discusses returning pointers from functions.
+
+## 11.1 Pointer Variables
+The first step in understanding pointers is visualizing what they represent at the machine level. In most moern computers, main memory is divided into **bytes**, with each byte capable of storing **eight bits** of information:
+
+![](https://i.imgur.com/0QnE0W3.png)
+
+Each byte has a unique address to distinguish it from the other bytes in memory. If there are `n` bytes in memory, we can think of addresses as numbers that range from `0` to `n-1` (see the figure at the top of the next page).
+An excutable program consists of both code (machine instructions corresponding to statements in the original C program) and data (variable in the original program). Each variable in the program occupies one or more bytes of memory;
+
+![enter image description here](https://i.imgur.com/9ZgElLN.png)
+
+the address of the first byte is said to be address of the variable. In the following figure, the variable i occupies the bytes at addresses 2000 and 2001, so i's address is 2000:
+ ![enter image description here](https://i.imgur.com/B5PUCrD.png)
+
+Here's where pointers come in. Altough addresses are represented by numbers, their range of values may differ from that of intergers, so we can't necessarily store them oridinary interger variables. We can, however, store them in special pointer variables. When we store the address of a variable i in the pointer variable p, we say that p "points to" `i`. In other words, a pointer is nothing more than an address, and an pointer variable is just a variable that can store a address.
+Insted of showing addresses as numbers in our examples, I'll use a simlpler notation. To indicate that a pointer variable p stores the address  of a variable i, I'll show the contents of `p` as an arrow  directed towards `i`:
+
+![enter image description here](https://i.imgur.com/lC3JVvZ.png)
+
+### Declaring Pointer Variables
+A pointer variable is declared in much the same way as an ordinary variable. The only difference is that the number of a pointer variable must br preceded by an asterisk:
+```c
+int *p;
+```
+
+
+## 11.2 The Address and Indirection Operators
 
 C provide a pair of operators designed specifically for use with pointers. To find the addess of a variable, we use the `&` (address) operator. If `x` is variable, then `&x` is the address of `x` in memory. To gain access to the object that pointer points to, we use the `*` (indirection) operator. If `p` is a pointer, then `*p` represents the object to which currently points.
 
@@ -74,29 +103,23 @@ printf("%d\n, i);     /* prints 2 */
 printf("%d\n, *p);    /* prints 2 */
 ```
 Never apply the indirection operator to an uninitialized pointer variable. If a pointer variable `p` hasn't been initialized, attempting to use the value of `p` in any way causes undefined behavior. In the following example, the call of `printf` may print garbage, cause the program to crash, or have some othe effect:
-
 ```c
 int *p;
 printf("%d", *p);    /*** WRONG ***/
 ```
-
 Assigning a value to  *p is particularly dangerous. If [ happens to contain a valid memory address, the following assignment will attempt to modify the date stored at tha address:
-
 ```c
 int *p;
 *p = 1;    /*** WRONG ***/
 ```
-
 If the location modified by this assignment belong to the program, it may behave erratically; if it belongs to the operation system, the program will most likely crash. Your compiler may issue a warning `p` is uninitialized, so pay close attention to any warnig message you get.
 
 ### Pointer Assignment
 
 C allows the use of the assignment operator to copy pointers, provided tha they have the same type. Suppose that i, j, p and q have been declared as follows:
-
 ```c
 int i, j, *p, *q;
 ```
-
 The statement
 ```c
 p = &i;
