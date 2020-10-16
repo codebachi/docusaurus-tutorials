@@ -4,6 +4,7 @@ title: "CSS Scelector"
 ---
 
 [](https://poiemaweb.com/css3-selector)
+[](https://velog.io/@rimu/css-css-%EC%84%A0%ED%83%9D%EC%9E%90selector-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
 
 ## CSS selector에 대해
 CSS(Cascading Style Sheets)는 HTML 요소(Element)의 스타일을 주는 역할을 하는데요, 그러려면 스타일을 적용하고자하는 HTML 요소를 특정할 필요가 있기 때문에 선택자(selector)에 대해 잘 알아둬야 합니다.
