@@ -12,7 +12,7 @@ CSS(Cascading Style Sheets)는 HTML 요소(Element)의 스타일을 주는 역�
 여기서 `h1`이라고 되어있는 부분이 바로 셀렉터 입니다. `h1`이라는 `html`의 태그를 선택해서 다음의 스타일을 적용한 것입니다. 프로퍼티(속성)과 값이 하나의 짝으로 움직입니다.
 
 
-## 기본 CSS selector
+## 6.3 기본 CSS selector
 
 ### 1. 전체 셀렉터(universal selector)
 규칙: *
