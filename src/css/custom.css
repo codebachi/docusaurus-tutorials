@@ -142,3 +142,7 @@ p > img {
   margin-right: auto;
   width: 60%;
 }
+
+.katex .textrm {
+  font-family: KaTeX_Main, 'Montserrat', 'Noto Sans KR', sans-serif;
+}

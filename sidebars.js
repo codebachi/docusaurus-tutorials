@@ -42,8 +42,15 @@ module.exports = {
       collapsed: true,
       items: [
         {
+          PreAlgebra: [
+            'pre-algebra-d/whole-numbers',
+            'pre-algebra-d/integers',            
+          ],
+        },
+        {
           Algebra: [
             'algebra/algebra-counting-methods',
+            'algebra/powers-and-roots',            
           ],
         },
         {
@@ -99,6 +106,16 @@ module.exports = {
       collapsed: true,
       items: [
         'web-css/css-selector'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Latex',
+      collapsed: true,
+      items: [
+        'latex/latex-mathematical-expressions',
+        'latex/latex-matrices',
+        'latex/latex-spacing-in-math-mode'
       ],
     },
   ]  

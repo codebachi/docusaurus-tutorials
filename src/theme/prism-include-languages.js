@@ -19,6 +19,9 @@ const prismIncludeLanguages = (PrismObject) => {
 
     require('prismjs/components/prism-powershell.js');
     require('prismjs/components/prism-gdscript.js');
+    require('prismjs/components/prism-latex.js');
+    require('prismjs/components/prism-json.js');
+    require('prismjs/components/prism-jsx.js');
     
     delete window.Prism;
   }
