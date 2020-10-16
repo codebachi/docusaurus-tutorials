@@ -48,10 +48,27 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'C language',
+      collapsed: true,
+      items: [
+        'clang/getting-started',
+        'clang/c-pointers'
+      ],
+    },
+    {
+      type: 'category',
       label: 'Math',
       collapsed: true,
       items: [
         'math/math'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'CSS',
+      collapsed: true,
+      items: [
+        'web-css/css-selector'
       ],
     },
   ]  
