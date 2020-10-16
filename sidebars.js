@@ -52,7 +52,8 @@ module.exports = {
       collapsed: true,
       items: [
         'clang/getting-started',
-        'clang/c-pointers'
+        'clang/c-pointers',
+        'clang-modern/cm-pointer'
       ],
     },
     {
