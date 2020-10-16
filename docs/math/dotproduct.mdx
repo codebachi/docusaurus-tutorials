@@ -1,0 +1,45 @@
+---
+id: dotproduct
+title: Dot Product
+---
+
+The name **"dot product"** comes from the **dot** symbol used in the notation:
+
+$$
+a \cdot b 
+$$
+
+Just like scalar-times-vector multiplication, the vector dot product
+is performed before addition and subtraction, unless parentheses are used
+to override this default order of operations.
+
+Note that although we usually omit the multiplication symbol when multiplying two scalars or a scalar
+and a vector, we must not omit the dot symbol when performing a vector
+dot product. If you ever see two vectors placed side-by-side with no symbol
+in between, interpret this according to the rules of matrix multiplication,
+which we discuss in Chapter 4.7
+The dot product of two vectors is the sum of the products of corresponding components, resulting in a scalar:
+
+$$
+\begin{bmatrix}
+ a_1\\  
+ a_2\\
+ \vdots\\
+ a_{n-1}\\
+ a_n
+\end{bmatrix} \cdot
+\begin{bmatrix}
+ b_1\\  
+ b_2\\
+ \vdots\\
+ b_{n-1}\\
+ b_n
+\end{bmatrix} = 
+a_1b_1 + a_2b_2 + \cdots + a_{n-1}b_{n-1} + a_nb_n
+$$
+
+This can be expressed succinctly by using the summation notation
+
+$$
+a \cdot b = \sum_{i=1}^{n} a_ib_i
+$$

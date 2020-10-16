@@ -38,6 +38,34 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'MathIsFun',
+      collapsed: true,
+      items: [
+        {
+          Algebra: [
+            'algebra/algebra-counting-methods',
+          ],
+        },
+        {
+          PreCalculus: [
+            'precalculus/cartesian-two-space',
+            'precalculus/vector-basics',
+            'precalculus/vector-multiplication',
+            'markdown-features',
+            'versioning'
+          ],
+        },
+        {
+          Calculus: [
+            'docs-introduction',
+            'markdown-features',
+            'versioning'
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Git',
       collapsed: true,
       items: [
@@ -61,7 +89,8 @@ module.exports = {
       label: 'Math',
       collapsed: true,
       items: [
-        'math/math'
+        'math/math',
+        'math/dotproduct'
       ],
     },
     {

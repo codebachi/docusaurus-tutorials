@@ -134,3 +134,11 @@ font-family: 'Noto Sans KR', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Righteous', cursive;
 */
+
+p > img {
+  /*max-width: 60%;*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
