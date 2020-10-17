@@ -28,7 +28,11 @@ module.exports = {
         'styling-layout',
         'static-assets',
         {
-          Docs: ['docs-introduction', 'markdown-features', 'versioning'],
+          Docs: [
+            'docs-introduction',
+            'markdown-features',
+            'versioning'
+          ],
         },
         'blog',
         'search',
@@ -42,9 +46,15 @@ module.exports = {
       collapsed: true,
       items: [
         {
+          Basic: [
+            'math_basic/math_basic_division',       
+          ],
+        },
+        {
           PreAlgebra: [
             'pre-algebra-d/whole-numbers',
-            'pre-algebra-d/integers',            
+            'pre-algebra-d/integers',
+            'pre-algebra-d/percent',        
           ],
         },
         {
